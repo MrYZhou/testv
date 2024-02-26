@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onView:testv:sidebar"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -18,6 +18,31 @@
       {
         "command": "testv.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "testv:openVueApp",
+        "title": "Open Vue App",
+        "category": "Vue Rollup"
+      }
+    ]
+  },
+  "viewsContainers": {
+    "activitybar": [
+      {
+        "id": "testv-sidebar-view",
+        "title": "Vue App",
+        "icon": "$(remote-explorer)"
+      }
+    ]
+  },
+  "views": {
+    "testv-sidebar-view": [
+      {
+        "type": "webview",
+        "id": "testv:sidebar",
+        "name": "vue with rollup",
+        "icon": "$(remote-explorer)",
+        "contextualTitle": "vue app"
       }
     ]
   },
